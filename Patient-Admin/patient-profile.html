@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html class="no-js " lang="en">
 <head>
 <meta charset="utf-8">
@@ -11,6 +11,8 @@
 <!-- Favicon-->
 <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
 <!-- Custom Css -->
+    <link rel="stylesheet" href="assets/plugins/dropzone/dropzone.css">
+    <link rel="stylesheet" href="assets/plugins/bootstrap-select/css/bootstrap-select.css" />
 <link rel="stylesheet" href="assets/css/main.css">
 <link rel="stylesheet" href="assets/css/color_skins.css">
 </head>
@@ -914,149 +916,241 @@
     </div>
 </div>
 
-<section class="content profile-page">
-    <div class="block-header">
-        <div class="row">
-            <div class="col-lg-7 col-md-6 col-sm-12">
-                <h2>Patient Profile
-                <small class="text-muted">Welcome to Oreo</small>
-                </h2>
-            </div>
-            <div class="col-lg-5 col-md-6 col-sm-12">
-                <button class="btn btn-primary btn-icon btn-round hidden-sm-down float-right m-l-10" type="button">
-                    <i class="zmdi zmdi-plus"></i>
-                </button>
-                <ul class="breadcrumb float-md-right">
-                    <li class="breadcrumb-item"><a href="index.html"><i class="zmdi zmdi-home"></i> Oreo</a></li>
-                    <li class="breadcrumb-item"><a href="javascript:void(0);">Patients</a></li>
-                    <li class="breadcrumb-item active">Patient Profile</li>
-                </ul>
+    <section class="content profile-page">
+        <div class="block-header">
+            <div class="row">
+                <div class="col-lg-7 col-md-6 col-sm-12">
+                    <h2>
+                        Patient Profile
+                        <small class="text-muted">Welcome to Oreo</small>
+                    </h2>
+                </div>
+                <div class="col-lg-5 col-md-6 col-sm-12">
+                    <button class="btn btn-primary btn-icon btn-round hidden-sm-down float-right m-l-10" type="button">
+                        <i class="zmdi zmdi-plus"></i>
+                    </button>
+                    <ul class="breadcrumb float-md-right">
+                        <li class="breadcrumb-item"><a href="index.html"><i class="zmdi zmdi-home"></i> Oreo</a></li>
+                        <li class="breadcrumb-item"><a href="javascript:void(0);">Patients</a></li>
+                        <li class="breadcrumb-item active">Patient Profile</li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="container-fluid">
-        <div class="row clearfix">
-            <div class="col-lg-4 col-md-12 col-sm-12">
-                <div class="card member-card">
-                    <div class="header l-coral">
-                        <h4 class="m-t-10">Eliana Smith</h4>
-                    </div>
-                    <div class="member-img">
-                        <a href="patient-invoice.html">
-                        <img src="assets/images/sm/avatar2.jpg" class="rounded-circle" alt="profile-image">
-                        </a>
-                    </div>
-                    <div class="body">
-                        <div class="col-12">
-                            <ul class="social-links list-unstyled">
-                                <li><a title="facebook" href="#"><i class="zmdi zmdi-facebook"></i></a></li>
-                                <li><a title="twitter" href="#"><i class="zmdi zmdi-twitter"></i></a></li>
-                                <li><a title="instagram" href="#"><i class="zmdi zmdi-instagram"></i></a></li>
-                            </ul>                            
+        <div class="container-fluid">
+            <div class="row clearfix">
+                <div class="col-lg-4 col-md-12 col-sm-12">
+                    <div class="card member-card">
+                        <div class="header l-coral">
+                            <h4 class="m-t-10">Eliana Smith</h4>
                         </div>
-                        <hr>
-                        <strong>Occupation</strong>
-                        <p>UI UX Design</p>
-                        <strong>Email ID</strong>
-                        <p>will.smith@info.com</p>
-                        <strong>Phone</strong>
-                        <p>+123 456 789</p>
-                        <hr>
-                        <strong>Address</strong>
-                        <address>85 Bay Drive, New Port Richey, FL 34653</address>
+                        <div class="member-img">
+                            <a href="patient-invoice.html">
+                                <img src="assets/images/sm/avatar2.jpg" class="rounded-circle" alt="profile-image">
+                            </a>
+                        </div>
+                        <div class="body">
+                            <div class="col-12">
+                                <ul class="social-links list-unstyled">
+                                    <li><a title="facebook" href="#"><i class="zmdi zmdi-facebook"></i></a></li>
+                                    <li><a title="twitter" href="#"><i class="zmdi zmdi-twitter"></i></a></li>
+                                    <li><a title="instagram" href="#"><i class="zmdi zmdi-instagram"></i></a></li>
+                                </ul>
+                            </div>
+                            <hr>
+                            <strong>Occupation</strong>
+                            <p>UI UX Design</p>
+                            <strong>Email ID</strong>
+                            <p>will.smith@info.com</p>
+                            <strong>Phone</strong>
+                            <p>+123 456 789</p>
+                            <hr>
+                            <strong>Address</strong>
+                            <address>85 Bay Drive, New Port Richey, FL 34653</address>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="header">
+                            <h2><strong>General</strong> Report</h2>
+                        </div>
+                        <div class="body">
+                            <ul class="list-unstyled">
+                                <li>
+                                    <div>Blood Pressure</div>
+                                    <div class="progress m-b-20">
+                                        <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%"> <span class="sr-only">40% Complete (success)</span> </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>Heart Beat</div>
+                                    <div class="progress m-b-20">
+                                        <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%"> <span class="sr-only">20% Complete</span> </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>Haemoglobin</div>
+                                    <div class="progress m-b-20">
+                                        <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%"> <span class="sr-only">60% Complete (warning)</span> </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>Sugar</div>
+                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%"> <span class="sr-only">80% Complete (danger)</span> </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="header">
-                        <h2><strong>General</strong> Report</h2>                                
-                    </div>
-                    <div class="body">
-                        <ul class="list-unstyled">
-                            <li>
-                                <div>Blood Pressure</div>
-                                <div class="progress m-b-20">
-                                    <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%"> <span class="sr-only">40% Complete (success)</span> </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div>Heart Beat</div>
-                                <div class="progress m-b-20">
-                                    <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%"> <span class="sr-only">20% Complete</span> </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div>Haemoglobin</div>
-                                <div class="progress m-b-20">
-                                    <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%"> <span class="sr-only">60% Complete (warning)</span> </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div>Sugar</div>
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%"> <span class="sr-only">80% Complete (danger)</span> </div>
-                                </div>
-                            </li>
+                <div class="col-lg-8 col-md-12 col-sm-12">
+
+                    <div class="card">
+                        <ul class="nav nav-tabs">
+                            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#about">About</a></li>
+                            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Account">Account</a></li>
                         </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane body active" id="about">
+                                <p>Dr. Charlotte Deo Leon is a neurosurgeon in East Patchogue,Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. He received his medical degree from Harvard Medical School and has been in practice for 21 years. He is one of 5 doctors at Brookhaven Memorial Hospital Medical Center and one of 9 at Southside Hospital who specialize in Neurological Surgery.</p>
+                                
+                            </div>
+                            <div class="tab-pane body" id="Account">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Username">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" placeholder="Current Password">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" placeholder="New Password">
+                                </div>
+                                <button class="btn btn-info btn-round">Save Changes</button>
+                                <hr>
+                                <div class="row clearfix">
+
+
+                                    <div class="col-lg-6 col-md-12">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="First Name">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-12">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Last Name">
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="col-lg-6 col-md-12">
+                                        <div class="form-group">
+                                            <select class="form-control">
+                                                <option value="">- Gender -</option>
+                                                <option value="10">Male</option>
+                                                <option value="20">Female</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-12">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Occupation">
+                                        </div>
+                                    </div>
+                                   
+
+                                    <div class="col-lg-4 col-md-12">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="City">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-12">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="E-mail">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-12">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Country">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group m-b-10">
+                                            <textarea rows="4" class="form-control no-resize" placeholder="Address Line 1"></textarea>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-lg-12 col-md-12">
+                                        <div class="form-group">
+                                            <input type="text" id="lng" class="form-control" placeholder="Location Coordinate">
+                                            <p class="help-block">(drag the ticker in following map to get map location)</p>
+                                            <div id="map_canvas" style="width: 100%; height: 230px;">
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-md-12">
+                                        <button class="btn btn-primary btn-round">Save Changes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div> 
-            </div>
-            <div class="col-lg-8 col-md-12 col-sm-12">
-                <div class="card">
-                    <div class="body">
-                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. </p>
-                        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source</p>
-                    </div>
-                </div>        
-                <div class="card" id="timeline">
-                    <div class="body">
-                        <div class="timeline-body">
-                            <div class="timeline m-border">
-                                <div class="timeline-item">
-                                    <div class="item-content">
-                                        <div class="text-small">Just now</div>
-                                        <p>Discharge.</p>
+
+
+                    <div class="card" id="timeline">
+                        <div class="body">
+                            <div class="timeline-body">
+                                <div class="timeline m-border">
+                                    <div class="timeline-item">
+                                        <div class="item-content">
+                                            <div class="text-small">Just now</div>
+                                            <p>Discharge.</p>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="timeline-item border-info">
-                                    <div class="item-content">
-                                        <div class="text-small">11:30</div>
-                                        <p>Routine Checkup</p>
+                                    <div class="timeline-item border-info">
+                                        <div class="item-content">
+                                            <div class="text-small">11:30</div>
+                                            <p>Routine Checkup</p>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="timeline-item border-warning border-l">
-                                    <div class="item-content">
-                                        <div class="text-small">10:30</div>
-                                        <p>Operation </p>
+                                    <div class="timeline-item border-warning border-l">
+                                        <div class="item-content">
+                                            <div class="text-small">10:30</div>
+                                            <p>Operation </p>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="timeline-item border-warning">
-                                    <div class="item-content">
-                                        <div class="text-small">3 days ago</div>
-                                        <p>Routine Checkup</p>
+                                    <div class="timeline-item border-warning">
+                                        <div class="item-content">
+                                            <div class="text-small">3 days ago</div>
+                                            <p>Routine Checkup</p>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="timeline-item border-danger">
-                                    <div class="item-content">
-                                        <div class="text--muted">Thu, 10 Mar</div>
-                                        <p>Routine Checkup</p>
+                                    <div class="timeline-item border-danger">
+                                        <div class="item-content">
+                                            <div class="text--muted">Thu, 10 Mar</div>
+                                            <p>Routine Checkup</p>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="timeline-item border-info">
-                                    <div class="item-content">
-                                        <div class="text-small">Sat, 5 Mar</div>
-                                        <p>Routine Checkup</p>
+                                    <div class="timeline-item border-info">
+                                        <div class="item-content">
+                                            <div class="text-small">Sat, 5 Mar</div>
+                                            <p>Routine Checkup</p>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="timeline-item border-danger">
-                                    <div class="item-content">
-                                        <div class="text-small">Sun, 11 Feb</div>
-                                        <p>Blood checkup test</p>
+                                    <div class="timeline-item border-danger">
+                                        <div class="item-content">
+                                            <div class="text-small">Sun, 11 Feb</div>
+                                            <p>Blood checkup test</p>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="timeline-item border-info">
-                                    <div class="item-content">
-                                        <div class="text-small">Thu, 17 Jan</div>
-                                        <p>Admit patient ward no. 21</p>
+                                    <div class="timeline-item border-info">
+                                        <div class="item-content">
+                                            <div class="text-small">Thu, 17 Jan</div>
+                                            <p>Admit patient ward no. 21</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -1065,12 +1159,42 @@
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 <!-- Jquery Core Js --> 
 <script src="assets/bundles/libscripts.bundle.js"></script> <!-- Bootstrap JS and jQuery v3.2.1 -->
 <script src="assets/bundles/vendorscripts.bundle.js"></script> <!-- slimscroll, waves Scripts Plugin Js -->  
-
+    <script src="assets/plugins/dropzone/dropzone.js"></script> <!-- Dropzone Plugin Js -->
 <script src="assets/bundles/mainscripts.bundle.js"></script><!-- Custom Js --> 
+    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBA43wUK94um--C049EPi6wHjXcYG3NRh8&libraries=places"></script>
+
+    <script type="text/javascript">
+        function initialize() {
+            var myLatlng = new google.maps.LatLng(25.2048, 55.2708);
+            var myOptions = {
+                zoom: 10,
+                center: myLatlng,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            }
+            var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+
+            var marker = new google.maps.Marker({
+                position: myLatlng,
+                map: map,
+                draggable: true
+            });
+            google.maps.event.addListener(
+                marker,
+                'dragend',
+                function () {
+
+                   // document.getElementById('<%= hdnLat.ClientID%>').value = marker.position.lat()
+                   // document.getElementById('<%= hdnLong.ClientID%>').value = marker.position.lng()
+                  //  document.getElementById('<%= txtMapLocation.ClientID%>').value = marker.position.lat() + "," + marker.position.lng();
+                    document.getElementById('lng').value = marker.position.lat() + "," + marker.position.lng();
+                }
+            );
+        }
+        window.onload = initialize();
+    </script>
 </body>
 </html>
