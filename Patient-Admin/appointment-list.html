@@ -6,21 +6,25 @@
 <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 <meta name="description" content="Responsive Bootstrap 4 and web Application ui kit.">
 
-<title>:: Oreo Hospital :: Doctors</title>
-<link rel="icon" href="favicon.ico" type="image/x-icon">
+<title>:: Oreo Hospital :: Inbox </title>
 <!-- Favicon-->
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<!-- Font Icon -->
 <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
-<link rel="stylesheet" href="assets/plugins/bootstrap-select/css/bootstrap-select.css"/>
 <!-- Custom Css -->
 <link rel="stylesheet" href="assets/css/main.css">
+<link rel="stylesheet" href="assets/css/inbox.css">
 <link rel="stylesheet" href="assets/css/color_skins.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="assets/plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet" />
+    <link href="assets/plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
 </head>
 <body class="theme-cyan">
 <!-- Page Loader -->
 <div class="page-loader-wrapper">
     <div class="loader">
         <div class="m-t-30"><img class="zmdi-hc-spin" src="assets/images/logo.svg" width="48" height="48" alt="Oreo"></div>
-        <p>Please wait...</p>
+        <p>Please wait...</p>        
     </div>
 </div>
 <!-- Overlay For Sidebars -->
@@ -215,11 +219,11 @@
 <!-- Left Sidebar -->
 <aside id="leftsidebar" class="sidebar">
     <ul class="nav nav-tabs">
-        <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#dashboard"><i class="zmdi zmdi-home m-r-5"></i>Oreo</a></li>
-        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#user">Docter</a></li>
+        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#dashboard"><i class="zmdi zmdi-home m-r-5"></i>Oreo</a></li>
+        <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#Inbox">Inbox</a></li>
     </ul>
     <div class="tab-content">
-        <div class="tab-pane stretchRight active" id="dashboard">
+        <div class="tab-pane stretchRight" id="dashboard">
             <div class="menu">
                 <ul class="list">
                     <li>
@@ -232,11 +236,11 @@
                         </div>
                     </li>
                     <li class="header">MAIN</li>
-                    <li><a href="index.html"><i class="zmdi zmdi-home"></i><span>Dashboard</span></a></li>            
+                    <li class="active open"><a href="index.html"><i class="zmdi zmdi-home"></i><span>Dashboard</span></a></li>            
                     <li><a href="book-appointment.html"><i class="zmdi zmdi-calendar-check"></i><span>Appointment</span> </a></li>
-                    <li class="active open"><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-account-add"></i><span>Doctors</span> </a>
+                    <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-account-add"></i><span>Doctors</span> </a>
                         <ul class="ml-menu">
-                            <li class="active"><a href="doctors.html">All Doctors</a></li>
+                            <li><a href="doctors.html">All Doctors</a></li>
                             <li><a href="add-doctor.html">Add Doctor</a></li>                       
                             <li><a href="profile.html">Doctor Profile</a></li>
                             <li><a href="events.html">Doctor Schedule</a></li>
@@ -254,7 +258,7 @@
                         <ul class="ml-menu">
                             <li><a href="payments.html">Payments</a></li>
                             <li><a href="add-payments.html">Add Payment</a></li>
-                            <li><a href="patient-invoice.html">Invoice</a></li>
+                            <li><a href="invoice.html">Invoice</a></li>
                         </ul>
                     </li>
                     <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-label-alt"></i><span>Departments</span> </a>
@@ -366,7 +370,7 @@
                 </ul>
             </div>
         </div>
-        <div class="tab-pane stretchLeft" id="user">
+        <div class="tab-pane stretchLeft active" id="Inbox">
             <div class="menu">
                 <ul class="list">
                     <li>
@@ -374,69 +378,97 @@
                             <div class="image"><a href="profile.html"><img src="http://via.placeholder.com/80x80" alt="User"></a></div>
                             <div class="detail">
                                 <h4>Dr. Charlotte</h4>
-                                <small>Neurologist</small>                        
+                                <small>Neurologist</small>
                             </div>
+                            <a title="facebook" href="javascript:void(0);"><i class="zmdi zmdi-facebook"></i></a>
+                            <a title="twitter" href="javascript:void(0);"><i class="zmdi zmdi-twitter"></i></a>
+                            <a title="instagram" href="javascript:void(0);"><i class="zmdi zmdi-instagram"></i></a>
                             <div class="row">
-                                <div class="col-12">
-                                    <a title="facebook" href="#"><i class="zmdi zmdi-facebook"></i></a>
-                                    <a title="twitter" href="#"><i class="zmdi zmdi-twitter"></i></a>
-                                    <a title="instagram" href="#"><i class="zmdi zmdi-instagram"></i></a>
+                                <div class="col-6">
+                                    <small>Primary</small>
+                                    <h5 class="m-b-5 number count-to" data-from="0" data-to="234" data-speed="2000" data-fresh-interval="700">234</h5>
                                 </div>
-                                <div class="col-4 p-r-0">
-                                    <h5 class="m-b-5">18</h5>
-                                    <small>Exp</small>
+                                <div class="col-6">
+                                    <small>Updates</small>
+                                    <h5 class="m-b-5 number count-to" data-from="0" data-to="705" data-speed="2000" data-fresh-interval="700">705</h5>
                                 </div>
-                                <div class="col-4">
-                                    <h5 class="m-b-5">125</h5>
-                                    <small>Awards</small>
-                                </div>
-                                <div class="col-4 p-l-0">
-                                    <h5 class="m-b-5">148</h5>
-                                    <small>Clients</small>
-                                </div>                                
                             </div>
                         </div>
                     </li>
+                    <li class="header">MAIN NAVIGATION</li>
                     <li>
-                        <small class="text-muted">Location: </small>
-                        <p>795 Folsom Ave, Suite 600 San Francisco, CADGE 94107</p>
-                        <hr>
-                        <small class="text-muted">Email address: </small>
-                        <p>Charlotte@example.com</p>
-                        <hr>
-                        <small class="text-muted">Phone: </small>
-                        <p>+ 202-555-0191</p>
-                        <hr>
-                        <small class="text-muted">Website: </small>
-                        <p>http://dr.charlotte.com/ </p>
-                        <hr>
-                        <ul class="list-unstyled">
-                            <li>
-                                <div>Colorectal Surgery</div>
-                                <div class="progress m-b-20">
-                                    <div class="progress-bar l-blue " role="progressbar" aria-valuenow="89" aria-valuemin="0" aria-valuemax="100" style="width: 89%"> <span class="sr-only">62% Complete</span> </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div>Endocrinology</div>
-                                <div class="progress m-b-20">
-                                    <div class="progress-bar l-green " role="progressbar" aria-valuenow="56" aria-valuemin="0" aria-valuemax="100" style="width: 56%"> <span class="sr-only">87% Complete</span> </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div>Dermatology</div>
-                                <div class="progress m-b-20">
-                                    <div class="progress-bar l-amber" role="progressbar" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100" style="width: 78%"> <span class="sr-only">32% Complete</span> </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div>Neurophysiology</div>
-                                <div class="progress m-b-20">
-                                    <div class="progress-bar l-blush" role="progressbar" aria-valuenow="43" aria-valuemin="0" aria-valuemax="100" style="width: 43%"> <span class="sr-only">56% Complete</span> </div>
-                                </div>
-                            </li>
-                        </ul>                        
-                    </li>                    
+                        <a href="index.html" >
+                            <i class="zmdi zmdi-home"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="active open">
+                        <a href="mail-inbox.html">
+                            <i class="zmdi zmdi-email"></i>
+                            <span>Inbox</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mail-compose.html" >
+                            <i class="zmdi zmdi-plus-circle"></i>
+                            <span>Compose Mail</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mail-single.html" >
+                            <i class="zmdi zmdi-file-text"></i>
+                            <span>Single Mail</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" >
+                            <i class="zmdi zmdi-folder-star"></i>
+                            <span>Draft</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" >
+                            <i class="zmdi zmdi-folder-star"></i>
+                            <span>Important</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" >
+                            <i class="zmdi zmdi-delete"></i>
+                            <span>Bin</span>
+                        </a>
+                    </li>
+                    <li class="header">LABELS</li>
+                    <li>
+                        <a href="javascript:void(0);" >
+                            <i class="zmdi zmdi-label col-blue"></i>
+                            <span>Family</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" >
+                            <i class="zmdi zmdi-label col-green"></i>
+                            <span>Work</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" >
+                            <i class="zmdi zmdi-label col-amber"></i>
+                            <span>Shop</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" >
+                            <i class="zmdi zmdi-label col-blush"></i>
+                            <span>Themeforest</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" >
+                            <i class="zmdi zmdi-label col-red"></i>
+                            <span>Google</span>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -525,7 +557,7 @@
                     <h6>Left Menu</h6>
                     <button class="t-light btn btn-default btn-simple btn-round btn-block">Light</button>
                     <button class="t-dark btn btn-default btn-round btn-block">Dark</button>
-                    <button class="m_img_btn btn btn-primary btn-round btn-block">Sidebar Image</button>                    
+					<button class="m_img_btn btn btn-primary btn-round btn-block">Sidebar Image</button>                    
                 </div>                
                 <div class="card">
                     <h6>Information Summary</h6>
@@ -853,13 +885,14 @@
         </div>
     </div>
 </aside>
+
 <!-- Chat-launcher -->
 <div class="chat-launcher"></div>
 <div class="chat-wrapper">
     <div class="card">
         <div class="header">
             <ul class="list-unstyled team-info margin-0">
-                <li class="m-r-15"><h2>Doctor Team</h2></li>
+                <li class="m-r-15"><h2>Dr. Team</h2></li>
                 <li>
                     <img src="assets/images/xs/avatar2.jpg" alt="Avatar">
                 </li>
@@ -883,7 +916,7 @@
                 <li class="left float-left">
                     <img src="assets/images/xs/avatar3.jpg" class="rounded-circle" alt="">
                     <div class="chat-info">
-                        <a class="name" href="#">Alexander</a>
+                        <a class="name" href="javascript:void(0);">Alexander</a>
                         <span class="datetime">6:12</span>                            
                         <span class="message">Hello, John </span>
                     </div>
@@ -895,10 +928,10 @@
                     <div class="chat-info"><span class="datetime">6:16</span> <span class="message">There are many variations of passages of Lorem Ipsum available</span> </div>
                 </li>
                 <li class="left float-left"> <img src="assets/images/xs/avatar2.jpg" class="rounded-circle" alt="">
-                    <div class="chat-info"> <a class="name" href="#">Elizabeth</a> <span class="datetime">6:25</span> <span class="message">Hi, Alexander,<br> John <br> What are you doing?</span> </div>
+                    <div class="chat-info"> <a class="name" href="javascript:void(0);">Elizabeth</a> <span class="datetime">6:25</span> <span class="message">Hi, Alexander,<br> John <br> What are you doing?</span> </div>
                 </li>
                 <li class="left float-left"> <img src="assets/images/xs/avatar1.jpg" class="rounded-circle" alt="">
-                    <div class="chat-info"> <a class="name" href="#">Michael</a> <span class="datetime">6:28</span> <span class="message">I would love to join the team.</span> </div>
+                    <div class="chat-info"> <a class="name" href="javascript:void(0);">Michael</a> <span class="datetime">6:28</span> <span class="message">I would love to join the team.</span> </div>
                 </li>
                     <li class="right">
                     <div class="chat-info"><span class="datetime">7:02</span> <span class="message">Hello, <br>Michael</span> </div>
@@ -914,212 +947,334 @@
         </div>
     </div>
 </div>
-<section class="content">
+
+<section class="content inbox">
     <div class="block-header">
         <div class="row">
-            <div class="col-lg-5 col-md-5 col-sm-12">
-                <h2>Favourite Doctors
+            <div class="col-lg-7 col-md-6 col-sm-12">
+                <h2>Doctor Appointment
                 <small>Welcome to Oreo</small>
                 </h2>
-            </div>            
-            <div class="col-lg-7 col-md-7 col-sm-12 text-right">
-                <button class="btn btn-white btn-icon btn-round hidden-sm-down float-right m-l-10" type="button">
-                    <i class="zmdi zmdi-plus"></i>
-                </button>
+            </div>
+            <div class="col-lg-5 col-md-6 col-sm-12">
                 <ul class="breadcrumb float-md-right">
                     <li class="breadcrumb-item"><a href="index.html"><i class="zmdi zmdi-home"></i> Oreo</a></li>
-                   
-                    <li class="breadcrumb-item active">Favourite Doctors</li>
+                    <li class="breadcrumb-item active">Appointment</li>
                 </ul>
             </div>
-        </div> 
+        </div>
     </div>
     <div class="container-fluid">
         <div class="row clearfix">
             <div class="col-lg-12">
-                <!--<div class="card">
+                <div class="card action_bar">
                     <div class="body">
-                        <ul class="nav nav-tabs padding-0">
-                            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#Permanent">Permanent</a></li>
+                        <div class="row clearfix">
+                            <div class="col-lg-1 col-md-2 col-3">
+                                <div class="checkbox inlineblock delete_all">
+                                    <input id="deleteall" type="checkbox">
+                                    <label for="deleteall">
+                                        All
+                                    </label>
+                                </div>                                
+                            </div>
+                            <div class="col-lg-5 col-md-4 col-6">
+                                <div class="input-group search">
+                                    <input type="text" class="form-control" placeholder="Search...">
+                                    <span class="input-group-addon">
+                                        <i class="zmdi zmdi-search"></i>
+                                    </span>
+                                </div>
+                            </div>                            
+                            <div class="col-md-4 col-lg-6 col-md-6 col-3 text-right">
+                                <!--<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Book Appointment</button>-->
 
+                                <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-raised m-b-10 btn-primary btn-block waves-effect" data-placement-from="top" data-placement-align="left"
+                                        data-animate-enter="" data-animate-exit="" data-color-name="bg-black">
+                                    Book Appointment
+                                </button>
+                            </div>                            
+                        </div>
+                    </div>
+                </div>
+            </div>           
+        </div>        
+        <div class="row clearfix">
+            <div class="col-md-12 col-lg-12 col-xl-12">
+                <ul class="mail_list list-group list-unstyled">
+                    <li class="list-group-item">
+                        <div class="media">
+                            <div class="pull-left">                                
+                                
+                                <div class="thumb hidden-sm-down m-r-20"> <img src="assets/images/xs/avatar1.jpg" class="rounded-circle" alt=""> </div>
+                            </div>
+                            <div class="media-body">
+                                <div class="media-heading">
+                                    <a href="mail-single.html" class="m-r-10">Velit a labore</a>
+                                    <span class="badge bg-blue">Nurologist</span>
+                                    <small class="float-right text-muted"><time class="hidden-sm-down" datetime="2017">01/08/2018 12:35 PM</time></small>
+                                    <button class="btn btn-icon btn-neutral btn-icon-mini"><i class="zmdi zmdi-edit"></i></button>
+                                    <button class="btn btn-icon btn-neutral btn-icon-mini"><i class="zmdi zmdi-delete"></i></button>
+                                </div>
+                                <p class="msg">Lorem Ipsum is simply dumm dummy text of the printing and typesetting industry. </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="media">
+                            <div class="pull-left">
+
+                                <div class="thumb hidden-sm-down m-r-20"> <img src="assets/images/xs/avatar1.jpg" class="rounded-circle" alt=""> </div>
+                            </div>
+                            <div class="media-body">
+                                <div class="media-heading">
+                                    <a href="mail-single.html" class="m-r-10">Velit a labore</a>
+                                    <span class="badge bg-blue">Nurologist</span>
+                                    <small class="float-right text-muted"><time class="hidden-sm-down" datetime="2017">01/08/2018 12:35 PM</time> </small>
+                                    <button class="btn btn-icon btn-neutral btn-icon-mini"><i class="zmdi zmdi-edit"></i></button>
+                                    <button class="btn btn-icon btn-neutral btn-icon-mini"><i class="zmdi zmdi-delete"></i></button>
+                                </div>
+                                <p class="msg">Lorem Ipsum is simply dumm dummy text of the printing and typesetting industry. </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="media">
+                            <div class="pull-left">
+
+                                <div class="thumb hidden-sm-down m-r-20"> <img src="assets/images/xs/avatar1.jpg" class="rounded-circle" alt=""> </div>
+                            </div>
+                            <div class="media-body">
+                                <div class="media-heading">
+                                    <a href="mail-single.html" class="m-r-10">Velit a labore</a>
+                                    <span class="badge bg-blue">Nurologist</span>
+                                    <small class="float-right text-muted"><time class="hidden-sm-down" datetime="2017">01/08/2018 12:35 PM</time> </small>
+                                    <button class="btn btn-icon btn-neutral btn-icon-mini"><i class="zmdi zmdi-edit"></i></button>
+                                    <button class="btn btn-icon btn-neutral btn-icon-mini"><i class="zmdi zmdi-delete"></i></button>
+                                </div>
+                                <p class="msg">Lorem Ipsum is simply dumm dummy text of the printing and typesetting industry. </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="media">
+                            <div class="pull-left">
+
+                                <div class="thumb hidden-sm-down m-r-20"> <img src="assets/images/xs/avatar1.jpg" class="rounded-circle" alt=""> </div>
+                            </div>
+                            <div class="media-body">
+                                <div class="media-heading">
+                                    <a href="mail-single.html" class="m-r-10">Velit a labore</a>
+                                    <span class="badge bg-blue">Nurologist</span>
+                                    <small class="float-right text-muted"><time class="hidden-sm-down" datetime="2017">01/08/2018 12:35 PM</time> </small>
+                                    <button class="btn btn-icon btn-neutral btn-icon-mini"><i class="zmdi zmdi-edit"></i></button>
+                                    <button class="btn btn-icon btn-neutral btn-icon-mini"><i class="zmdi zmdi-delete"></i></button>
+                                </div>
+                                <p class="msg">Lorem Ipsum is simply dumm dummy text of the printing and typesetting industry. </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="media">
+                            <div class="pull-left">
+
+                                <div class="thumb hidden-sm-down m-r-20"> <img src="assets/images/xs/avatar1.jpg" class="rounded-circle" alt=""> </div>
+                            </div>
+                            <div class="media-body">
+                                <div class="media-heading">
+                                    <a href="mail-single.html" class="m-r-10">Velit a labore</a>
+                                    <span class="badge bg-blue">Nurologist</span>
+                                    <small class="float-right text-muted"><time class="hidden-sm-down" datetime="2017">01/08/2018 12:35 PM</time> </small>
+                                    <button class="btn btn-icon btn-neutral btn-icon-mini"><i class="zmdi zmdi-edit"></i></button>
+                                    <button class="btn btn-icon btn-neutral btn-icon-mini"><i class="zmdi zmdi-delete"></i></button>
+                                </div>
+                                <p class="msg">Lorem Ipsum is simply dumm dummy text of the printing and typesetting industry. </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="media">
+                            <div class="pull-left">
+
+                                <div class="thumb hidden-sm-down m-r-20"> <img src="assets/images/xs/avatar1.jpg" class="rounded-circle" alt=""> </div>
+                            </div>
+                            <div class="media-body">
+                                <div class="media-heading">
+                                    <a href="mail-single.html" class="m-r-10">Velit a labore</a>
+                                    <span class="badge bg-blue">Nurologist</span>
+                                    <small class="float-right text-muted"><time class="hidden-sm-down" datetime="2017">01/08/2018 12:35 PM</time> </small>
+                                    <button class="btn btn-icon btn-neutral btn-icon-mini"><i class="zmdi zmdi-edit"></i></button>
+                                    <button class="btn btn-icon btn-neutral btn-icon-mini"><i class="zmdi zmdi-delete"></i></button>
+                                </div>
+                                <p class="msg">Lorem Ipsum is simply dumm dummy text of the printing and typesetting industry. </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="media">
+                            <div class="pull-left">
+
+                                <div class="thumb hidden-sm-down m-r-20"> <img src="assets/images/xs/avatar1.jpg" class="rounded-circle" alt=""> </div>
+                            </div>
+                            <div class="media-body">
+                                <div class="media-heading">
+                                    <a href="mail-single.html" class="m-r-10">Velit a labore</a>
+                                    <span class="badge bg-blue">Nurologist</span>
+                                    <small class="float-right text-muted"><time class="hidden-sm-down" datetime="2017">01/08/2018 12:35 PM</time> </small>
+                                    <button class="btn btn-icon btn-neutral btn-icon-mini"><i class="zmdi zmdi-edit"></i></button>
+                                    <button class="btn btn-icon btn-neutral btn-icon-mini"><i class="zmdi zmdi-delete"></i></button>
+                                </div>
+                                <p class="msg">Lorem Ipsum is simply dumm dummy text of the printing and typesetting industry. </p>
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+                <div class="card m-t-5">
+                    <div class="body">
+                        <ul class="pagination pagination-primary m-b-0">
+                            <li class="page-item"><a class="page-link" href="javascript:void(0);">Previous</a></li>
+                            <li class="page-item"><a class="page-link" href="javascript:void(0);">1</a></li>
+                            <li class="page-item active"><a class="page-link" href="javascript:void(0);">2</a></li>
+                            <li class="page-item"><a class="page-link" href="javascript:void(0);">3</a></li>
+                            <li class="page-item"><a class="page-link" href="javascript:void(0);">Next</a></li>
                         </ul>
                     </div>
-                </div>-->
-                <div class="tab-content m-t-10">
-                    <div class="tab-pane active" id="Permanent">
-                        <div class="row clearfix">
-                            <div class="col-lg-3 col-md-4 col-sm-6">
-                                <div class="card xl-blue member-card doctor">
-                                    <div class="body">
-                                        <div class="member-thumb">
-                                            <img src="assets/images/doctors/member1.png" class="img-fluid" alt="profile-image">                               
-                                        </div>
-                                        <div class="detail">
-                                            <h4 class="m-b-0">Dr. John</h4>
-                                            <p class="text-muted">Dentist</p>
-                                            <ul class="social-links list-inline m-t-20">
-                                                <li><a title="facebook" href="#"><i class="zmdi zmdi-facebook"></i></a></li>
-                                                <li><a title="twitter" href="#" ><i class="zmdi zmdi-twitter"></i></a></li>
-                                                <li><a title="instagram" href="3" ><i class="zmdi zmdi-instagram"></i></a></li>
-                                            </ul>
-                                            <p class="text-muted">795 Folsom Ave, Suite 600 San Francisco, CADGE 94107</p>                           
-                                            <a href="profile.html"  class="btn btn-default btn-round btn-simple">View Profile</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-6">
-                                <div class="card xl-khaki member-card doctor">
-                                    <div class="body">
-                                        <div class="member-thumb">
-                                            <img src="assets/images/doctors/member2.png" class="img-fluid" alt="profile-image">                               
-                                        </div>
-                                        <div class="detail">
-                                            <h4 class="m-b-0">Dr. Amelia</h4>
-                                            <p class="text-muted">Gynecologist</p>
-                                            <ul class="social-links list-inline m-t-20">
-                                                <li><a title="facebook" href="#"><i class="zmdi zmdi-facebook"></i></a></li>
-                                                <li><a title="twitter" href="#" ><i class="zmdi zmdi-twitter"></i></a></li>
-                                                <li><a title="instagram" href="3" ><i class="zmdi zmdi-instagram"></i></a></li>
-                                            </ul>
-                                            <p class="text-muted">795 Folsom Ave, Suite 600 San Francisco, CADGE 94107</p>                           
-                                            <a href="profile.html"  class="btn btn-default btn-round btn-simple">View Profile</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-6">
-                                <div class="card xl-blue member-card doctor">
-                                    <div class="body">
-                                        <div class="member-thumb">
-                                            <img src="assets/images/doctors/member3.png" class="img-fluid" alt="profile-image">                               
-                                        </div>
-                                        <div class="detail">
-                                            <h4 class="m-b-0">Dr. Jack </h4>
-                                            <p class="text-muted">Dentist</p>
-                                            <ul class="social-links list-inline m-t-20">
-                                                <li><a title="facebook" href="#"><i class="zmdi zmdi-facebook"></i></a></li>
-                                                <li><a title="twitter" href="#" ><i class="zmdi zmdi-twitter"></i></a></li>
-                                                <li><a title="instagram" href="3" ><i class="zmdi zmdi-instagram"></i></a></li>
-                                            </ul>
-                                            <p class="text-muted">795 Folsom Ave, Suite 600 San Francisco, CADGE 94107</p>                           
-                                            <a href="profile.html"  class="btn btn-default btn-round btn-simple">View Profile</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-6">
-                                <div class="card xl-parpl member-card doctor">
-                                    <div class="body">
-                                        <div class="member-thumb">
-                                            <img src="assets/images/doctors/member4.png" class="img-fluid" alt="profile-image">                               
-                                        </div>
-                                        <div class="detail">
-                                            <h4 class="m-b-0">Dr. Jessica </h4>
-                                            <p class="text-muted">Nursing</p>
-                                            <ul class="social-links list-inline m-t-20">
-                                                <li><a title="facebook" href="#"><i class="zmdi zmdi-facebook"></i></a></li>
-                                                <li><a title="twitter" href="#" ><i class="zmdi zmdi-twitter"></i></a></li>
-                                                <li><a title="instagram" href="3" ><i class="zmdi zmdi-instagram"></i></a></li>
-                                            </ul>
-                                            <p class="text-muted">795 Folsom Ave, Suite 600 San Francisco, CADGE 94107</p>                           
-                                            <a href="profile.html"  class="btn btn-default btn-round btn-simple">View Profile</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-6">
-                                <div class="card xl-pink member-card doctor">
-                                    <div class="body">
-                                        <div class="member-thumb">
-                                            <img src="assets/images/doctors/member5.png" class="img-fluid" alt="profile-image">                               
-                                        </div>
-                                        <div class="detail">
-                                            <h4 class="m-b-0">Dr. Joseph </h4>
-                                            <p class="text-muted">Audiology</p>
-                                            <ul class="social-links list-inline m-t-20">
-                                                <li><a title="facebook" href="#"><i class="zmdi zmdi-facebook"></i></a></li>
-                                                <li><a title="twitter" href="#" ><i class="zmdi zmdi-twitter"></i></a></li>
-                                                <li><a title="instagram" href="3" ><i class="zmdi zmdi-instagram"></i></a></li>
-                                            </ul>
-                                            <p class="text-muted">795 Folsom Ave, Suite 600 San Francisco, CADGE 94107</p>                           
-                                            <a href="profile.html"  class="btn btn-default btn-round btn-simple">View Profile</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-6">
-                                <div class="card xl-seagreen member-card doctor">
-                                    <div class="body">
-                                        <div class="member-thumb">
-                                            <img src="assets/images/doctors/member6.png" class="img-fluid" alt="profile-image">                               
-                                        </div>
-                                        <div class="detail">
-                                            <h4 class="m-b-0">Dr. Charlie </h4>
-                                            <p class="text-muted">Physical Therapy</p>
-                                            <ul class="social-links list-inline m-t-20">
-                                                <li><a title="facebook" href="#"><i class="zmdi zmdi-facebook"></i></a></li>
-                                                <li><a title="twitter" href="#" ><i class="zmdi zmdi-twitter"></i></a></li>
-                                                <li><a title="instagram" href="3" ><i class="zmdi zmdi-instagram"></i></a></li>
-                                            </ul>
-                                            <p class="text-muted">795 Folsom Ave, Suite 600 San Francisco, CADGE 94107</p>                           
-                                            <a href="profile.html"  class="btn btn-default btn-round btn-simple">View Profile</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-6">
-                                <div class="card xl-blue member-card doctor">
-                                    <div class="body">
-                                        <div class="member-thumb">
-                                            <img src="assets/images/doctors/member7.png" class="img-fluid" alt="profile-image">                               
-                                        </div>
-                                        <div class="detail">
-                                            <h4 class="m-b-0">Dr. William </h4>
-                                            <p class="text-muted">Dentist</p>
-                                            <ul class="social-links list-inline m-t-20">
-                                                <li><a title="facebook" href="#"><i class="zmdi zmdi-facebook"></i></a></li>
-                                                <li><a title="twitter" href="#" ><i class="zmdi zmdi-twitter"></i></a></li>
-                                                <li><a title="instagram" href="3" ><i class="zmdi zmdi-instagram"></i></a></li>
-                                            </ul>
-                                            <p class="text-muted">795 Folsom Ave, Suite 600 San Francisco, CADGE 94107</p>                           
-                                            <a href="profile.html"  class="btn btn-default btn-round btn-simple">View Profile</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-6">
-                                <div class="card xl-seagreen member-card doctor">
-                                    <div class="body">
-                                        <div class="member-thumb">
-                                            <img src="assets/images/doctors/member8.png" class="img-fluid" alt="profile-image">                               
-                                        </div>
-                                        <div class="detail">
-                                            <h4 class="m-b-0">Dr. Sophie </h4>
-                                            <p class="text-muted">Physical Therapy</p>
-                                            <ul class="social-links list-inline m-t-20">
-                                                <li><a title="facebook" href="#"><i class="zmdi zmdi-facebook"></i></a></li>
-                                                <li><a title="twitter" href="#" ><i class="zmdi zmdi-twitter"></i></a></li>
-                                                <li><a title="instagram" href="3" ><i class="zmdi zmdi-instagram"></i></a></li>
-                                            </ul>
-                                            <p class="text-muted">795 Folsom Ave, Suite 600 San Francisco, CADGE 94107</p>                           
-                                            <a href="profile.html"  class="btn btn-default btn-round btn-simple">View Profile</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> 
-                    </div>
-       
                 </div>
             </div>
-        </div> 
+        </div>
     </div>
 </section>
-<!-- Jquery Core Js --> 
-<script src="assets/bundles/libscripts.bundle.js"></script> <!-- Bootstrap JS and jQuery v3.2.1 -->
-<script src="assets/bundles/vendorscripts.bundle.js"></script> <!-- slimscroll, waves Scripts Plugin Js --> 
+<!-- Jquery Core Js -->
 
-<script src="assets/bundles/mainscripts.bundle.js"></script><!-- Custom Js --> 
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Book Appointment</h4>
+                </div>
+                <div class="modal-body">
+                    
+                    <section class="">
+                        <div class="container-fluid">
+                            <div class="row clearfix">
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <div class="card">
+                                       
+                                        <div class="body">
+                                            <div class="row clearfix">
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control" placeholder="First Name">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control" placeholder="Last Name">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row clearfix">
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control" placeholder="Date of Birth">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <select class="form-control show-tick">
+                                                        <option value="">- Gender -</option>
+                                                        <option value="10">Male</option>
+                                                        <option value="20">Female</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <select class="form-control show-tick">
+                                                        <option value="">- Service -</option>
+                                                        <option>Select Service</option>
+                                                        <option>Dental Checkup</option>
+                                                        <option>Full Body Checkup</option>
+                                                        <option>ENT Checkup</option>
+                                                        <option>Heart Checkup</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <select class="form-control show-tick">
+                                                        <option value="">- Doctor -</option>
+                                                        <option value="10">Mr. Peter</option>
+                                                        <option value="20">Mrs. Lovely</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon">
+                                                            <i class="zmdi zmdi-calendar"></i>
+                                                        </span>
+                                                        <input type="text" class="form-control datetimepicker" placeholder="Please choose date & time...">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row clearfix">
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control" placeholder="Enter Your Email">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control" placeholder="Phone">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-12">
+                                                    <div class="form-group">
+                                                        <textarea rows="4" class="form-control no-resize" placeholder="Please type what you want..."></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <button type="submit" class="btn btn-primary btn-round">Submit</button>
+                                                    <!--<button type="submit" class="btn btn-default btn-round btn-simple">Cancel</button>-->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+
+
+                </div>
+                <!--<div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>-->
+            </div>
+
+        </div>
+    </div>
+ 
+<script src="assets/bundles/libscripts.bundle.js"></script>
+<script src="assets/bundles/vendorscripts.bundle.js"></script>
+
+<script src="assets/bundles/mainscripts.bundle.js"></script>    
+  
+    <script src="assets/plugins/momentjs/moment.js"></script> <!-- Moment Plugin Js -->
+    <script src="assets/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
+
+    <script>
+    $(function () {
+    //Datetimepicker plugin
+    $('.datetimepicker').bootstrapMaterialDatePicker({
+        format: 'dddd DD MMMM YYYY - HH:mm',
+        clearButton: true,
+        weekStart: 1
+    });
+});
+    </script>
+
+
 </body>
 </html>
